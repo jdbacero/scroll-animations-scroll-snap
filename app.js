@@ -32,6 +32,16 @@ this.addEventListener('keypress', event => {
     }
 })
 
+this.addEventListener('pointerdown', event => {
+    console.log(event.key)
+    if (!play) {
+        musicPlay()
+        play++
+        document.getElementById('start').hidden = true
+        document.getElementById('container').hidden = false
+    }
+})
+
 function musicPlay() {
     document.getElementById('myAudio').play();
     document.removeEventListener('scroll', musicPlay);
